@@ -1,16 +1,22 @@
-//1. VARIABLES (En la librería, borrar. Incluidos en _config.scss)
+//1. VARIABLES
 //=================================================================
 
 //Breakpoints
-$desktop:1600px;
-$laptop:1170px;
+$desktop:1500px;
+$laptop:1100px;
 $tablet:800px;
 $mobile:500px;
 
 
-//2. MIXINS (En la librería, borrar. Incluidos en _config.scss)
+//2. MIXINS
 //=================================================================
 
+//Media queries
+@mixin mq($bp){
+  @media screen and(min-width: $bp){
+    @content;
+  }
+}
 //Grid
 @mixin grid($cols,$grid:12){
     width:percentage($cols/$grid);
@@ -22,14 +28,6 @@ $mobile:500px;
 @mixin offset($offset,$o-grid:12){
     margin-left: percentage($offset/$o-grid);
 }
-
-//Media queries
-@mixin mq($bp){
-  @media screen and(min-width: $bp){
-    @content;
-  }
-}
-
 
 
 
@@ -48,8 +46,6 @@ $mobile:500px;
   };
 }
 
-
-
 .container-full{
   width: 100%;
   margin: auto;
@@ -59,13 +55,13 @@ $mobile:500px;
   padding: 0px 15px;
 }
 
-
 .container{
   max-width: 1280px;
   width: 90%;
   margin: auto;
   height: auto;
   overflow: auto;
+  @include mq($tablet){width: 88%;}
 }
 
 .row {
@@ -101,73 +97,66 @@ $mobile:500px;
   }
 }
 
-@include mq($tablet){
-  .container{
-    width: 88%;
-  }
-}
-
-@include mq($laptop){
-  .container{
-    width: 88%;
-  }
-}
-
 
 
 
 //3. DEVICES
 //=============================================================
-//Mobile Grid & Offset
+
+//Mobile - Grid & Offset
 @for $cols from 1 through 12{
-  .col.s#{$cols}{
-    position: relative;
-    @include grid($cols);
+  .col{
+    &.s#{$cols}{
+      @include grid($cols);
+      margin-left: 0%;
+    }
   }
-  .offset-s-#{$cols}{
-    @include offset($cols) ;
-  }
-  // .offset-m-#{$cols}{
-  //   margin-left: 0px;
-  // }
-  // .offset-l-#{$cols}{
-  //   margin-left: 0px;
-  // }
 }
-//Tablet Grid & Offset
+@for $cols from 1 through 12{
+  .col{
+    &.offset-s-#{$cols}{
+      @include offset($cols);
+    }
+  }
+}
+
+
+
+
+//Tablet - Grid & Offset
 @include mq($tablet){
   @for $cols from 1 through 12{
-    .col.m#{$cols}{
-      position: relative;
-      @include grid($cols);
+    .col{
+      &.m#{$cols}{
+        @include grid($cols);
+        margin-left: 0%;
+      }
     }
-    .offset-m-#{$cols}{
-      @include offset($cols) ;
+  }
+  @for $cols from 1 through 12{
+    .col{
+      &.offset-m-#{$cols}{
+        @include offset($cols);
+      }
     }
-    // .offset-s-#{$cols}{
-    //   margin-left: 0px;
-    // }
-    // .offset-l-#{$cols}{
-    //   margin-left: 0px;
-    // }
   }
 }
-//Desktop Grid & Offset
-@include mq($laptop){
-  @for $cols from 1 through 12{
-    .col.l#{$cols}{
-      position: relative;
-      @include grid($cols);
-    }
 
-    .offset-l-#{$cols}{
-      @include offset($cols) ;
+//Desktop - Grid & Offset
+@include mq($laptop){
+  @for $cols from 1 through 12{ 
+    .col{
+      &.l#{$cols}{
+        @include grid($cols);
+        margin-left: 0%;
+      }
     }
-    // .offset-s-#{$cols}{
-    //   margin-left: 0px;
-    // }
-    // .offset-m-#{$cols}{
-    //   margin-left: 0px;
-    // }
+  }
+  @for $cols from 1 through 12{
+    .col{
+      &.offset-l-#{$cols}{
+        @include offset($cols);
+      }
+    }
   }
 }
