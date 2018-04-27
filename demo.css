@@ -1,0 +1,41 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+h1{
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-align: center;
+  font-size: 45px; /*Pasar a em´s o rem´s!*/
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: #21adff;
+}
+
+h2{
+  font-size: 22px; /*Pasar a em´s o rem´s!*/
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: grey;
+}
+
+
+p{
+  font-weight: 200;
+  font-size: 17px; /*Pasar a em´s o rem´s!*/
+  color: #636366;
+  text-align:center;
+  line-height: 28px; /*Pasar a em´s o rem´s!*/
+}
+
+.col .inner{
+  min-height: 80px;
+  background: #E4F4FE;
+  border-radius: 3px;
+  border:solid #c4e8ff 1px;
+  box-sizing: border-box;
+}
+.col{
+  margin: 14px 0px;
+}
