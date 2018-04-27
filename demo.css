@@ -32,10 +32,20 @@ p{
 .col .inner{
   min-height: 80px;
   background: #E4F4FE;
-  border-radius: 3px;
+  border-radius: 8px;
   border:solid #c4e8ff 1px;
   box-sizing: border-box;
 }
 .col{
   margin: 14px 0px;
+}
+
+.row.demo-row{
+  margin-top:23px;
+}
+
+.grey{
+  border: #ddd solid 1px;
+  border-radius: 8px;
+  overflow: auto;
 }
