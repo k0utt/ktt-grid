@@ -113,7 +113,7 @@ $mobile:500px;
     }
   }
 }
-@for $cols from 1 through 12{
+@for $cols from 0 through 12{
   .col{
     &.offset-s-#{$cols}{
       @include offset($cols);
@@ -133,7 +133,7 @@ $mobile:500px;
       }
     }
   }
-  @for $cols from 1 through 12{
+  @for $cols from 0 through 12{
     .col{
       &.offset-m-#{$cols}{
         @include offset($cols);
@@ -151,7 +151,7 @@ $mobile:500px;
       }
     }
   }
-  @for $cols from 1 through 12{
+  @for $cols from 0 through 12{
     .col{
       &.offset-l-#{$cols}{
         @include offset($cols);

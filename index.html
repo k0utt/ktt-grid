@@ -13,13 +13,13 @@
     <!-- GRID open -->
     <section class="section-xl--top container">
       <div class="row section-m">
-        <h1 style="text-align:center;">Ktt-grid testing</h1>
+        <h1 style="text-align:center;">Ktt-grid system</h1>      
       </div>
 
 
       <div class="row section-m">
         <article class="col l8 m10 s12 offset-l-2 offset-m-1">
-          <h2 style="text-align:center;">12 column grid-system, fully responsive</h2>
+          <h2 style="text-align:center;">Sistema de 12 columnas, 100% responsive</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
           </p>
@@ -27,6 +27,8 @@
         </article>
 
       </div>
+
+
       <!-- 12 cols -->
       <div class="row">
         <article class="col l1 m2 s4"><div class="inner"></div></article>
@@ -44,6 +46,8 @@
       </div>
       <!-- 12 cols -->
 
+
+      
 
 
       <!-- 6 cols -->
@@ -105,27 +109,86 @@
     <section class="section-xl--top container">
 
       <article class="col l8 m10 s12 offset-l-2 offset-m-1">
-        <h2 style="text-align:center;">Manipulable by offset</h2>
+        <h2 style="text-align:center;">Manipula el desplazamiento de las columnas</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+          El sistema de clases "offset" permite establecer los desplazamientos por columnas que tendrán los bloques. Al estar basado en las normas 
+          css mobile-first, al incluir una clase offset el desplazamiento que prevalecerá será el de la resolución menor.
         </p>
         <br>
       </article>
 
 
-        <div class="grey row demo-row">
-          <article class="col l8 m8 s6">
-            <div class="inner"></div>
-          </article>
-          <article class="col l2 m2 s3 offset-l-2 offset-s-1">
-            <div class="inner"></div>
-          </article>
-        </div>
-        <div class="grey row demo-row">
-          <article class="col l8 m4 s10 offset-l-4 offset-m-3 offset-s-2">
-            <div class="inner"></div>
-          </article>
-        </div>
+      <article>
+          <div class="grey row demo-row">
+              <div class="col l8 m4 s10 offset-l-4 offset-m-3 offset-s-2">
+                <div class="inner"></div>
+              </div>
+            </div>
+      
+            <div class="section-m container">
+              <div class="row">        
+                <p class="center-align">       
+                  <code class="center-align">&ltarticle class="col l8 m4 s10 offset-l-4 offset-m-3 offset-s-2">&lt/article></code>
+                </p>
+                <p class="center-align">El desplazamiento se va reduciendo en cada breakpoint.</p>
+              </div>
+            </div>
+      </article>
+
+
+
+
+
+
+
+      <article>
+          <div class="grey row demo-row">
+              <div class="col l8 m8 s6">
+                <div class="inner"></div>
+              </div>
+              <div class="col l2 m2 s3 offset-l-2 offset-s-1">
+                <div class="inner"></div>
+              </div>
+          </div>
+    
+    
+            
+            <div class="section-m container">
+              <div class="row col m10 s12 offset-m-1">
+                <p class="center-align">   
+                  <code class="center-align">&ltarticle class="col l2 m2 s3 offset-l-2 offset-s-1">&lt/article></code>
+                </p>
+                <p class="center-align">El desplazamiento es mayor en resoluciones grandes y menor en las pequeñas. No se establece un desplazamiento para la resolución medianas y por defecto adquiere el de las pequeñas.</p>
+              </div>
+            </div>
+      </article>
+
+
+
+      <article>
+          <div class="grey row demo-row">
+              <div class="col l8 m8 s6">
+                <div class="inner"></div>
+              </div>
+              <div class="col l2 m2 s3 offset-l-0 offset-m-2 offset-s-0">
+                <div class="inner"></div>
+              </div>
+          </div>
+    
+    
+            
+            <div class="section-m container">
+              <div class="row col m10 s12 offset-m-1">
+                <p class="center-align">   
+                  <code class="center-align">&ltarticle class="col l2 m2 s3 offset-l-0 offset-m-2 offset-s-0">&lt/article></code>
+                </p>
+                <p class="center-align">El desplazamiento solo se da en la resolución mediana</p>
+              </div>
+            </div>
+      </article>
+
+
+
     </section>
     <!-- OFFSET close -->
 
@@ -134,9 +197,19 @@
 
 
     <!-- NESTING open -->
-    <section class="section-xl--doble container">
-    </section>
+      <section class="section-xl--doble container">
+      </section>
     <!-- NESTING close -->
 
   </body>
 </html>
+
+<!-- Incluir tags: Flexbox-version / Float-version (for old browsers) / Mobile-first / Fully responsive ... etc -->
+
+<!-- Debido al sistema mobile-first, si queremos estilo en una resolución pequeña pero no en las grandes, debe haber un media-query min-width
+que establezca como debe corregirse el estilo en las resoluciones grandes. Por defecto, siempre cogerá los estilos de la resolución más pequeña.
+
+Si queremos dar la posibilidad de aplicar un desplazamiento solo en las resoluciones pequeñas, debemos crear la clase "offset-tamaño-0". Aplicar
+desplazamientos en reslociones pequeñas unicamente no es muy habitual, pero se pretende contemplar todas las posibilidades en el grid-system.
+
+-->

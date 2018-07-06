@@ -2,7 +2,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-
+/* Base styles */
 h1{
   text-align: center;
   letter-spacing: 0.5px;
@@ -17,16 +17,19 @@ h2{
   font-size: 22px; /*Pasar a em´s o rem´s!*/
   font-weight: 500;
   letter-spacing: 2px;
-  color: grey;
+  color: #0071ea;
 }
 
+code{
+  color:#232323;
+}
 
 p{
-  font-weight: 200;
-  font-size: 17px; /*Pasar a em´s o rem´s!*/
-  color: #636366;
+  font-weight: 300;
+  font-size:15px; /*Pasar a em´s o rem´s!*/
+  color: #6b6b6b;
   text-align:center;
-  line-height: 28px; /*Pasar a em´s o rem´s!*/
+  line-height: 32px; /*Pasar a em´s o rem´s!*/
 }
 
 .col .inner{
@@ -44,8 +47,19 @@ p{
   margin-top:23px;
 }
 
+
+/* Helpers */
 .grey{
   border: #ddd solid 1px;
   border-radius: 8px;
   overflow: auto;
+}
+.center-align{
+  text-align: center!important;
+}
+.right-align{
+  text-align: right!important;
+}
+.upcase{
+  text-transform: uppercase!important;
 }
